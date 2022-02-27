@@ -1,1 +1,0 @@
-function Mkdir() { [ -n "$1" ] && mkdir -p "$@" && cd "$1"; }
