@@ -1,3 +1,6 @@
+filetype plugin on
+set mouse+=a
+set autoindent
 set guicursor=
 set nohlsearch
 set hidden
@@ -34,7 +37,7 @@ set shortmess+=c
 set colorcolumn=80
 
 
-
+let mapeader = " "
 
 
 
@@ -58,4 +61,24 @@ augroup coder_2
     autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
 
 augroup END
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"   Bracey Settings
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:bracey_server_port=8080
+let g:bracey_auto_start_browser=0
+let g:bracey_server_allow_remote_connections=1
+
+
+
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  Terminal
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set splitbelow
+
 

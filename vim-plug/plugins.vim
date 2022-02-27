@@ -1,5 +1,12 @@
-call plug#begin('~/.config/nvim/autoload/plugged')
 
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
+
+
+"call plug#begin('~/.config/nvim/vim-plug')
+call plug#begin(stdpath('config').'/vim-plug')
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
     " File Explorer
@@ -24,22 +31,34 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'numToStr/comment.nvim'
     Plug 'JoosepAlviste/nvim-ts-context-commentstring'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
     Plug 'mhinz/vim-startify'
 
+    Plug 'Valloric/YouCompleteMe'
 
-
-
+   "EMMET
+   Plug 'mattn/emmet-vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Terminal                                                                      "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
    Plug 'akinsho/toggleterm.nvim'
 
-
-
+   Plug 'sbdchd/neoformat'
+   Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 
 
 
 call plug#end()
 set laststatus=2
 colorscheme gruvbox
+
+
+"setting for format on save
+"
+"
+"
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END

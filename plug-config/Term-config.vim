@@ -4,7 +4,6 @@ let g:toggleterm_terminal_mapping = '<C-t>'
 autocmd TermEnter term://*toggleterm#*
       \ tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
 
-let g:ToggleTerm direction = float
 " By applying the mappings this way you can pass a count to your
 " mapping to open a specific window.
 " For example: 2<C-t> will open terminal 2
