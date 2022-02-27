@@ -5,7 +5,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 \| endif
 
 
-"call plug#begin('~/.config/nvim/vim-plug')
+"call plug#begin('~/.config/nvim/plugged')
 call plug#begin(stdpath('config').'/vim-plug')
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
